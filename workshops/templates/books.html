@@ -1,0 +1,17 @@
+<!-- Explain this code -->
+<!doctype html>
+<title>Guestbook</title>
+
+<h1>Welcome to the epic Guestbook!</h1>
+
+<p>Previous entries: </p>
+<div>
+    {% for entry in entries %}
+        <p>{{ entry }}</p>
+    {% endfor %}
+</div>
+
+<form method="post" action="/add">
+  <input type="text" placeholder="write a message..." name="entryText" />
+  <button type="submit">Add Guestbook Entry</button>
+</form>
