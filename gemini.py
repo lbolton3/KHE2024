@@ -21,5 +21,5 @@ def main():
     for i, question in enumerate(questions, 1):
         print(f"Question {i}: {question}")
 
-if __name == "__main":
+if __name__ == "__main__":
     main()
