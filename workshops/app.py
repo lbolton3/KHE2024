@@ -1,19 +1,22 @@
-from flask import Flask, render_template,request, url_for, redirect # pulls templates from template directotry
+from flask import Flask, render_template, request, redirect, url_for
+from markupsafe import Markup
 
 app = Flask(__name__)
-
-entries = [] 
+entries = []
 
 @app.route("/")
-def myBlog():
+def home():
     return render_template("books.html",entries=entries)
 
-# Get , Post , Put, Patch, Delete
-@app.route("/add",methods=[ "POST" ])
-def add():
+entries = []
+
+@app.route("/add",methods=["POST"])
+def add_entry():
     entries.append(request.form["entryText"])
-    return redirect(url_for("myBlog")) # name of function
+    return redirect(url_for("home"))
 
 
-# @app.route("/add", method=[ "DELETE" ])
-# def delete():
+@app.route("/entries")
+def get_all_entries():
+    return [Markup.escape(x) for x in entries]
+
