@@ -1,0 +1,57 @@
+.head{
+    background-color: yellowgreen;
+    text-align: center;
+}
+
+.container {
+    background-image: url('./assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 55vh;
+    color: white;
+}
+
+.explain {
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+.des {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.dropdown-container {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: center; /* Center items horizontally */
+    position: relative;
+}
+
+.dropdown {
+    margin: 70px;
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+}
+
+
+
+/* Focus styles */
+.dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
