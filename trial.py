@@ -11,7 +11,7 @@ def text_extraction(ppt_file):
 
     for slides in presentation.slides:
         for shape in slides.shapes:
-            print(slides.slide_id)
+            # print(slides.slide_id)
             if hasattr(shape, "text"):
                 extracted_text.append(shape.text)
 
@@ -36,19 +36,28 @@ def generate_questions_geminai(text):
     response = model.generate_content(prompt)
    # response = str(response)
     #data = response.json()
-    print(response)
+    #print(response)
     print("-------------------------------------------")
     print(response.text)
 
 
 
 def main():
-    ppt_file = "./2cs1-ppt.pptx"
-    extracted_text = text_extraction(ppt_file)
-    print(extracted_text)
-    generate_questions_geminai(extracted_text)
+    ppt_files = []
+
+    # ppt_file = "./2cs1-ppt.pptx"
+    # extracted_text = text_extraction(ppt_file)
+    # print(extracted_text)
+    # generate_questions_geminai(extracted_text)
     #for i, question in enumerate(questions, 1):
      #   print(f"Question {i}: {question}")
+    
+    # tempArr = ["1cs1-ppt.pptx"]
+    for i in range(5):
+        ppt_file = str(i) + "cs1-ppt.pptx"
+        extracted_text = text_extraction(ppt_file)
+        generate_questions_geminai(extracted_text)
+        print("----------------------------------------------------------")
 
 if __name__ == "__main__":
     main()
